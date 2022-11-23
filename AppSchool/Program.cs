@@ -1,7 +1,14 @@
+using AppSchool.Views.Home;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MvcSchoolContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcSchoolContext")));
+
 
 var app = builder.Build();
 
