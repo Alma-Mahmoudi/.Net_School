@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<MvcSchoolContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcSchoolContext")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcSchoolContextConnection")));
 
 
 var app = builder.Build();
